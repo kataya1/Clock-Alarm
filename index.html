@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="clock.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+
+<body>
+    <div id="alarm-button" onclick="openPopUp()"><i class="material-icons">alarm</i></div>
+    <div id="clock">
+        <div id="time">
+            <span id="hms"></span>
+            <span id="dayformat"></span>
+        </div>
+        <div id="month">
+            
+        </div>
+        <div>
+            <ul id="week">
+                <li class="weekday">SUN</li>
+                <li class="weekday">MON</li>
+                <li class="weekday">TUE</li>
+                <li class="weekday">WED</li>
+                <li class="weekday">THU</li>
+                <li class="weekday">FRI</li>
+                <li class="weekday">SAT</li>
+            </ul>
+        </div>
+    </div>
+    <div id="cover">
+        <div id="pop-up">
+            <button id="close-btn"onclick="closePopUp(event)">x</button>
+            <div id="alarm">
+                <input type="number" name="hours" id="a-hours" placeholder="hr">
+                <input type="number" name="minutes" id="a-minutes" placeholder="min">
+                <input type="number" name="seconds" id="a-seconds" placeholder="sec">
+
+            </div>
+            <div id="btns">
+                <button  onclick="setAlarm()">SET</button>
+                <button onclick="clearAlarm()">CLEAR</button>
+            </div>
+            <ul id="alarm-container"></ul>
+            
+        </div>
+    </div>
+</body>
+
+</html>
