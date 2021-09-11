@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+@font-face {
+    font-family: sevenSegment;
+    src: url(Seven%20Segment.ttf);
+}
+
+body{
+    background-image: url("beach.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: inherit;
+    display: grid; 
+    font-family: sevenSegment;
+}
+#clock{
+    margin: 50px;
+    color: white;
+    justify-self: end;
+    align-self: end;
+}
+#time{
+    text-align: end;
+}
+#hms{
+    font-size: 70px;
+    text-align: end;
+}
+#week{
+    display:flex;
+    gap: 10px;
+}
+.weekday{
+    font-weight: 700;
+    color: #fff8;
+}
+#alarm-button{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #3330;
+    cursor: pointer;
+    justify-self: end;
+    align-self: start;
+    margin: 20px;
+}
+i{
+    color: #fffc;
+    font-size: 20px;
+}
+
+ul{
+    list-style: none;
+}
+
+
+
+
+/********************************
+* *alarm
+*********************************/
+
+#cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333333e5;
+    /* display:grid; */
+    display: none;
+    place-items: center;
+}
+#pop-up{
+        width: 300px;
+        min-height: 300px;
+        background-color: #fff;
+        display: grid;
+        place-items: center;
+        grid-template-areas: 
+        ". . b"
+        ". a ."
+        ". btn ."
+        "alarm alarm alarm";
+        
+        grid-template-columns: 20px 1fr min-content;
+        grid-template-rows:min-content 2fr 1fr max-content;
+}
+#close-btn{
+    grid-area: b;
+    height: 20px;
+    width: 20px;
+
+}
+#alarm{
+    grid-area: a;
+    display:flex;
+    gap:30px;
+    justify-content: center;
+}
+#alarm-container{
+    justify-self: stretch;
+    grid-area:alarm;
+    display:flex;
+    flex-direction: column;
+}
+#alarm-container li{
+    text-align: center;
+}
+#alarm input{
+    width:50px;
+}
+#btns{
+    grid-area: btn;
+}
